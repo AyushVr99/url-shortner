@@ -40,9 +40,9 @@ export default function App() {
   }
   return (
     <div className='p-3 max-w-lg mx-auto '>
-      <h1 className='text-3xl text-center font-semibold my-7 text-black'>URL Shortner</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4 mt-15 border p-10 bg-blue-400'>
-        <label className="text-black">URL:</label>
+      <h1 className='text-4xl text-center font-semibold my-7 text-purple-500'>URL Shortner</h1>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-4 mt-15 border p-10 bg-white'>
+        <label className="text-2xl text-black">URL:</label>
         <input 
           type="text" 
           placeholder="Enter URL" 

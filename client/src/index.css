@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: slategrey
+body {
+    background-image: url('./images/urlImage.jpg'); 
+    background-size: cover; 
 }
