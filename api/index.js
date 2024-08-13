@@ -3,11 +3,16 @@ import mongoose  from "mongoose";
 import urlRouter from "./router/route.js";
 import dotenv from "dotenv";
 import  URL_Model from './model/model.js';
+import path from 'path';
 
 dotenv.config(); 
 
+const __dirname = path.resolve();
+
 const app = express();
+app.use(express.json());
 const PORT = process.env.PORT || 4000;
+
 
 mongoose
     .connect(process.env.MONGO)
@@ -15,7 +20,7 @@ mongoose
     .catch((err)=> console.log(err))
 
 
-app.use(express.json());
+
 
 app.get('/url/:shortId', async (req, res) => {
     const shortId = req.params.shortId;
@@ -44,5 +49,12 @@ app.get('/url/:shortId', async (req, res) => {
 });
 
 app.use('/url' , urlRouter);
+
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+})
 
 app.listen(PORT,()=>console.log(`Server started at PORT: ${PORT}`));
