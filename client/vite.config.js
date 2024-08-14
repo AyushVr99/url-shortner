@@ -9,7 +9,7 @@ export default defineConfig({
     },
     proxy: {
       '/url': {
-        target: 'https://url-shortner-y9c4.vercel.app',
+        target: 'https://url-shortner-iota-amber.vercel.app',
         secure: false,
       }
     }
