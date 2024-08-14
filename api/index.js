@@ -21,9 +21,10 @@ mongoose
 
 
 
-app.get('url/ping', () => {
-    return res.text("pong");
+app.get('/url/ping', (req,res) => {
+    res.send("pong");
 })
+
 app.get('/url/:shortId', async (req, res) => {
     const shortId = req.params.shortId;
     try {
