@@ -9,7 +9,7 @@ export default defineConfig({
     },
     proxy: {
       '/url': {
-        target: 'http://localhost:4000',
+        target: 'https://url-shortner-y9c4.vercel.app',
         secure: false,
       }
     }
